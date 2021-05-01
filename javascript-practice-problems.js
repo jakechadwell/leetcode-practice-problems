@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use strict";
 // Write a function named countPosi that accepts an array of numbers and returns the number of positive numbers in the array.
 // countPosi([-2, 7, 4, -9, 1]) //3
@@ -40,3 +41,19 @@ var strStr = function(haystack, needle) {
  * 
  * 
  */
+=======
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    var stringSplit = s.split(" ");
+    var splitLength = (stringSplit.length)-1
+    if (s.length >= 1){
+        return stringSplit[splitLength].length
+    }else{
+        return 0
+    }
+};
+console.log(lengthOfLastWord("a "));
+>>>>>>> e1e6d9df5343bcd4ef96d951de8fd6ecd9c55d89
