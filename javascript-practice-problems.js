@@ -93,3 +93,43 @@ var addTwoNumbers = function(l1, l2) {
     }
     return List.next;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} sum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, sum)
+{
+    var bool=false;
+
+    function countSum(root,newSum)
+    {
+        if(!root)
+            return;
+        newSum+=root.val;
+        if(root.left==null && root.right==null)
+        {
+            if(sum==newSum)
+            {
+                bool=true;
+                return;
+            }
+        }
+        else
+        {
+            countSum(root.left,newSum);
+            countSum(root.right,newSum);
+        }
+    }
+
+    countSum(root,0);
+    return bool;
+};
