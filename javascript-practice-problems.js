@@ -120,7 +120,6 @@ var hasPathSum = function(root, sum)
             if(sum==newSum)
             {
                 bool=true;
-                return;
             }
         }
         else
@@ -132,4 +131,13 @@ var hasPathSum = function(root, sum)
 
     countSum(root,0);
     return bool;
+};
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    x = x + "";
+    return x.split("").reverse().join("")==x;
 };
