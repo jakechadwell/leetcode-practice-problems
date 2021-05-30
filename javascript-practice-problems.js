@@ -141,3 +141,12 @@ var isPalindrome = function(x) {
     x = x + "";
     return x.split("").reverse().join("")==x;
 };
+
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function(s) {
+    return s.reverse();
+};
+
