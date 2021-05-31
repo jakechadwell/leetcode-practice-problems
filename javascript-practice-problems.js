@@ -150,3 +150,20 @@ var reverseString = function(s) {
     return s.reverse();
 };
 
+/**
+ * @param {number} x
+ * @return {number}
+ */
+ var reverse = function(x) {
+    const neg = x < 0;
+    const sign = neg ? '-' : '';
+  
+    const str = x.toString().split('').reverse().join('');
+    const result = parseInt(`${sign}${str}`);
+  
+    if (result > 2147483647 || result < -2147483647) {
+      return 0;
+    }
+  
+    return result;
+  };
