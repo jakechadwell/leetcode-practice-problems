@@ -197,3 +197,17 @@ var maxProfit = function(prices) {
     }
     return maxprofit;
 };
+
+/**
+ * @param {character[]} letters
+ * @param {character} target
+ * @return {character}
+ */
+var nextGreatestLetter = function(letters, target) {
+    let char;
+    for(let i = 0; i<letters.length; i++){
+        if(letters[i]>target){
+            return letters[i];
+        }
+    }return letters[0];
+};
