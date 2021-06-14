@@ -260,3 +260,21 @@ var twoSum = function(nums, target) {
     }
 
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    let maximum = nums[0];
+    for(let i=0;i<nums.length;i++){
+        let sum = nums[i-1] + nums[i];
+        if(sum > nums[i]){
+            nums[i] = sum;
+        }
+        if(nums[i] > maximum){
+            maximum = nums[i];
+        }
+    }
+    return maximum;
+};
