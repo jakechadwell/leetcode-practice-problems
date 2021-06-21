@@ -269,12 +269,23 @@ var maxSubArray = function(nums) {
     let maximum = nums[0];
     for(let i=0;i<nums.length;i++){
         let sum = nums[i-1] + nums[i];
-        if(sum > nums[i]){
-            nums[i] = sum;
-        }
-        if(nums[i] > maximum){
-            maximum = nums[i];
-        }
+            if(sum > nums[i]){
+                nums[i] = sum;
+            }
+            if(nums[i] > maximum){
+                maximum = nums[i];
+            }
     }
     return maximum;
+};
+
+var isSubsequence = function(s, t) {
+    if(s === "") return true;
+    if(t == "") return false;
+
+    if(s[s.length - 1] === t[t.length - 1]) {
+        return isSubsequence(s.substring(0, s.length - 1), t.substring(0, t.length - 1));
+    } else {
+        return isSubsequence(s, t.substring(0, t.length - 1));
+    }
 };
