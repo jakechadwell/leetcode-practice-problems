@@ -289,3 +289,25 @@ var isSubsequence = function(s, t) {
         return isSubsequence(s, t.substring(0, t.length - 1));
     }
 };
+
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    let n = digits.length;
+    let remainder = 1;
+    while (n > 0) {
+        let num = digits[n-1] + remainder;
+        if (num < 10) {
+            digits[n-1] = num
+            remainder = 0;
+            return digits
+        } else {
+            digits[n-1] = 0;
+            n--;
+        }
+    }
+    digits.unshift(remainder);
+    return digits;
+};
