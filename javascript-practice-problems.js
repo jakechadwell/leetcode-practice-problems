@@ -311,3 +311,29 @@ var plusOne = function(digits) {
     digits.unshift(remainder);
     return digits;
 };
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const symbols = {
+    M: 1000,
+    D: 500,
+    C: 100,
+    L: 50,
+    X: 10,
+    V: 5,
+    I: 1,
+};
+
+let romanToInt = function (str) {
+    let res = 0;
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        let currVal = Number(symbols[str[i]]);
+        let prevVal = i + 1 >= str.length ? null : Number(symbols[str[i + 1]]);
+        res = prevVal != null && currVal < prevVal ? res - currVal : res + currVal;
+
+    }
+    return res;
+};
