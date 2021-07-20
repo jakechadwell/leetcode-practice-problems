@@ -388,3 +388,31 @@ var mergeTwoLists = function(l1, l2) {
 
     return pointer.next;
 };
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    const memo = new Array(n)
+    return climb_Stairs(n, memo);
+};
+
+//memoized solution
+
+var climb_Stairs = function(i , memo){
+
+    if(i < 0){
+        return 0
+    }
+
+    if(i === 0){
+        return 1
+    }
+
+    if(!memo[i]){
+        memo[i] = climb_Stairs(i-1, memo) + climb_Stairs(i-2, memo);
+    }
+
+    return memo[i]
+}
