@@ -416,3 +416,18 @@ var climb_Stairs = function(i , memo){
 
     return memo[i]
 }
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+    let result = nums.indexOf(target);
+    if (result === -1) {
+        nums.push(target);
+        nums.sort((a, b) => a - b);
+        result = nums.indexOf(target);
+    }
+    return result;
+};
