@@ -431,3 +431,27 @@ var searchInsert = function(nums, target) {
     }
     return result;
 };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+
+var maxProfit = function(prices) {
+    let min =prices[0]
+    let i=0
+    while(i<prices.length){
+        min = Math.min(min,prices[i])
+        prices[i] -=min
+        i++
+    }
+
+    i=0
+    let max=0
+    // max --> day with maximum profit when sell
+    while(i<prices.length){
+        max = Math.max(max,prices[i])
+        i++
+    }
+    return max
+};
