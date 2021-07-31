@@ -455,3 +455,24 @@ var maxProfit = function(prices) {
     }
     return max
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    const rule = Math.floor(nums.length/2);
+    let counter = 0;
+    nums = nums.sort((a, b) => a - b);
+
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+
+        if (num === nums[i + 1]) counter++;
+        if (num !== nums[i + 1]) {
+            counter++;
+            if (counter > rule) return num;
+            else counter = 0;
+        }
+    }
+};
